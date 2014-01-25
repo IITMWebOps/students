@@ -21,7 +21,7 @@ if (isset($data->username) and isset($data->password) ){
   if ( !empty($data->username) and !empty($data->password) ){
 
     $query = "SELECT `users`.`id` FROM `stu_portal`.`users` WHERE `username` LIKE '$data->username'";
-    $result = mysql_query($query) or die(mysql_error());
+    $result = mysql_query($query) or error_log(mysql_error());
 
     if (mysql_num_rows( $result) == 1 )
 
