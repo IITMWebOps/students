@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteBase /spapp/
+RewriteCond %{HTTP_HOST} ^students\.iitm\.ac\.in$ [NC]
+RewriteRule ^spapp(.*) /var/sites/IITMStudentsPortal12/spapp [QSA,NE,L]
+
+RewriteCond %{REQUEST_URI}  !^/spapp/assets/.*
+
+RewriteRule .* coreapp/main.php [NE,QSA,L]
+
+Options -Indexes

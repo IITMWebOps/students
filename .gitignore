@@ -1,0 +1,7 @@
+.readme.txt.swo
+.readme.txt.swp
+logs
+assets
+coreapp/appconfig.php
+coreapp/dbconfig.php
+apps/user/ldaplogin.php
