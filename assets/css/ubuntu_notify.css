@@ -1,0 +1,42 @@
+.notify{
+    font-family:Helvetica Neue,Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif;
+    font-size:100%;
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:20%;
+    background-color:#222222;
+    color:#ffffff;
+    border-radius:4px;
+    box-shadow:0 0 10px #222;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    z-index:900;
+    opacity: 0.85; 
+    top: 20px;
+    transition:opacity 0.5s;
+   -webkit-transition:opacity 0.5s; /* Safari */
+}
+
+
+.notify:hover
+{
+opacity:0.50;
+cursor:default !important;
+}
+
+.notify > div {
+    padding:10px;
+    position:relative;
+}
+.notify table {
+    width:100%;
+    padding:0;
+    -webkit-border-horizontal-spacing:0;
+    -webkit-border-vertical-spacing:0;
+}
+
+.notify td.notify-content {
+    padding-left:10px;
+    vertical-align:center;
+}
