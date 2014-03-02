@@ -1,4 +1,4 @@
-<div ng-show = "status.show"  ng-view class="reveal-animation small-12 column"> 
+<div ng-show = "status.show" class="small-12 column" ng-view class="reveal-animation"> 
     <div data-alert="" class="alert-box {{status.cls}}"> 
     	<div class="row">
 			<div class="small-3 columns">
