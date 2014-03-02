@@ -18,17 +18,19 @@ define('JS_ROOT', ASSETS_ROOT . '/' . "js", false );
 define('APPJS_ROOT', ASSETS_ROOT . '/' . "applicationjs", false );
 
 
-	require_once (ROOT . DS . 'coreapp' . DS . 'appconfig.php');
-	require_once (ROOT . DS . 'coreapp' . DS . 'route.php');
-	require_once (ROOT . DS . 'coreapp' . DS . 'dbconfig.php');
-  require_once (ROOT . DS . 'coreapp' . DS . 'httpresponse.php');
-  require_once (ROOT . DS . 'coreapp' . DS . 'redirectTo.php');
-  require_once (ROOT . DS . 'coreapp' . DS . 'currentuser.php');
-  require_once (ROOT . DS . 'coreapp' . DS . 'pageTitle.php');
+	require_once (ROOT . DS . 'coreapp' . DS . 'config.app.php');
+	require_once (ROOT . DS . 'coreapp' . DS . 'config.db.php');
 
+  require_once (ROOT . DS . 'coreapp' . DS . 'class.user.php');
+  require_once (ROOT . DS . 'coreapp' . DS . 'class.current_user.php');
+	require_once (ROOT . DS . 'coreapp' . DS . 'class.get_route.php');
 
+  require_once (ROOT . DS . 'coreapp' . DS . 'function.http_response_code.php');
+  require_once (ROOT . DS . 'coreapp' . DS . 'function.redirect_to.php');
+  require_once (ROOT . DS . 'coreapp' . DS . 'function.page_title.php');
+  require_once (ROOT . DS . 'coreapp' . DS . 'function.mysql_fetch_all.php');
+  require_once (ROOT . DS . 'coreapp' . DS . 'function.render_alert.php');
 
-  
 class Application{
 
 	public $dbcon;
@@ -60,11 +62,12 @@ $ap->route = new GetRoute(AppConfig::$PRIMARY_ROUTES,AppConfig::$SECONDARY_ROUTE
 
 $current_user = new CurrentUser();
 
-error_log($ap->route->pageURI,0);
+trigger_error(__FILE__ );
 $targetPath = APP_ROOT.DS.$ap->route->GetTarget($ap->route->pageURI);
 error_log($targetPath,0);
 $targetPath = is_file($targetPath) ? $targetPath : PUBLIC_ROOT . DS . '404.html';
 error_log($targetPath,0);
-
 include $targetPath;
+
+die();  
 ?>

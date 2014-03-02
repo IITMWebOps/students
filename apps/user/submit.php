@@ -7,8 +7,11 @@ if( $current_user->login() ) redirect_to('/user/login', true);
 
 $script = '<script>
               function SubmitCtrl($scope, GetResponse,$location,$http,AppData, UserData){
-                  UserData.request();
+                UserData.request();
+                if( GetResponse.history[2] != "/user/logout" )
                   $location.url(GetResponse.history[2]);
+                else
+                  $location.url(AppData.defaultPage);
               }
           </script>
           <div ng-controller = "SubmitCtrl"><br><br> <br><center><h2>Signing Into Students Portal</h2> </center>  </div>';

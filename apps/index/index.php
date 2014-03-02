@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html ng-app="spApp" ng-controller = "AppCtrl as app" class="lt-ie10" lang="en" > <![endif]-->
 
-<html ng-app="spApp" ng-controller = "AppCtrl as app"  class="no-js" lang="en" >
+<html id='students_portal_app' ng-app="spApp" ng-controller = "AppCtrl as app"  class="no-js" lang="en" >
 <?php
 	require_once"header.php";
 ?>

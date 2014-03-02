@@ -1,11 +1,8 @@
 <?php
-
     if (!function_exists('redirect_to')) {
-        
         function redirect_to( $path, $routechange = false ) {
           
             if($routechange){
-             
                 header("Location: $path",true,200); 
             }
             else {
@@ -15,8 +12,6 @@
             }
             exit();
         }
-
     }
-
 ?>
 

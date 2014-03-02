@@ -2,9 +2,10 @@
 
 page_title('Login');
 
+
 if ( $current_user->login() ){
-  echo "<center> 
-          Logged in as $current_user->fullname ( $current_user->username ) <br>
+  echo "<center><br><br><br> 
+          Logged in as $current_user->fullname ( $current_user->username ) <br><br><br><br>
           <a href='#/user/logout' class='button'>Sign Out</a>
           </center>";
 } else{

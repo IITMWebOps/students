@@ -5,7 +5,7 @@
         	<ul class="side-nav">
             	<li><form>
     			<!--  <label>Search Documentation</label> -->
-    			<input tabindex="1" id="" type="search" placeholder="Search Students:" ng-model="StudentSearch.search" ng-change = "app.request({location: '/student_search', progress: false, alert: false, method: 'POST',object: StudentSearch })"  autocomplete="off">
+    			<input tabindex="1" id="" type="search" placeholder="Search Students:" ng-model="StudentSearch.search" ng-change = "app.request({location: '/student_search?search='+StudentSearch.search, progress: false, alert: false, method: 'POST', changeURL: true })" ng-focus = "app.request({location: '/student_search?search='+StudentSearch.search, progress: false, alert: false, method: 'POST', changeURL: true })" autocomplete="off">
   			</form></li>
   				<li><a href="#">Link 1</a></li>
   				<li><a href="#">Link 2</a></li>
