@@ -40,6 +40,14 @@
 
 </div>
 <!-- ### Main Body Div - End -->
+<!-- ### Left Column Div - Begin -->
+
+	<?php require_once"footer.php"; ?>
+
+<!-- ### Left Column Div - End -->
+
+
+
 <!--
 <ng-progress> </ng-progress>
 -->

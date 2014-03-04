@@ -20,10 +20,10 @@
 	<div class="large-9 medium-8 small-8 columns">
 <br><br>
 <div class="row">
-  <div class="small-8 columns">
+  <div class="small-7 columns">
      <h2> {{app.title() | capitalize}}</h2>
   </div>
-  <div class="small-4 columns">
+  <div class="small-5 columns">
     <alert-status></alert-status>
   </div>
 </div>
@@ -40,6 +40,14 @@
 
 </div>
 <!-- ### Main Body Div - End -->
+<!-- ### Left Column Div - Begin -->
+
+	<?php require_once"footer.php"; ?>
+
+<!-- ### Left Column Div - End -->
+
+
+
 <!--
 <ng-progress> </ng-progress>
 -->
