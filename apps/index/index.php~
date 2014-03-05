@@ -17,7 +17,7 @@
         
 <!-- ### Right Column Div - Begin -->
 
-	<div class="large-9 medium-8 small-8 columns">
+	<div class="large-9 medium-8 small-12 columns " style="position:absolute;">
 <br><br>
 <div class="row">
   <div class="small-7 columns">

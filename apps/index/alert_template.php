@@ -4,7 +4,7 @@
       				<div class="alert-ubuntu" style="">
       				<div class="">
 							<div style="" id="alert-ubuntu-left">
-								<img src="../../../spapp/assets/images/alert_images/yash.jpg " alt="warning" >
+								<img src="../../../spapp/assets/images/alert_images/warning-one-piece.png " alt="warning" >
 							</div>      					
       					
       					<div style="" id="alert-ubuntu-right">

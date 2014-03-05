@@ -16,8 +16,9 @@
 
 	<script src="<?=JS_ROOT?>/vendor/modernizr.js"></script>
 </head>
-</body>
+<body>
 <!-- ### Top Nav - Begin -->
+<div class="top-nav-bar" style="">
 	<nav class="top-bar" data-topbar>
 		<ul class="title-area">
 			<li class="name">
@@ -31,5 +32,6 @@
       <user-status></user-status>
     </section>
 	</nav>
+</div>
 <!--### Top Nav - End -->
 
