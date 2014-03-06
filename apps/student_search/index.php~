@@ -32,7 +32,7 @@ else{
         echo" <a href='#/student_search?search=".$_GET['search']."&f=$limit_t'> | Next</a> ";
     else 
       echo" | Next";
-    //	Displaying the Next Page Tab again at the end of results;
+    //	Displaying the Next Page Tab ends;    
     echo " </small> 
         </h4><br>";
     while($row = mysql_fetch_object($result) ){
@@ -41,7 +41,7 @@ else{
             <p># $row->room  $row->hostel</p>
         </blockquote>";
     }
-
+	//	Displaying the Next Page Tab again at the end of results;	
 	echo "
         <h4 class='text right'>
           <small> Showing ".$limit_f." - ".$limit_t." of ".$count_result[0];
