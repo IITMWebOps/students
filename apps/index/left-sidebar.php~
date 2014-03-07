@@ -5,7 +5,7 @@
     		<div class="leftColumn">
             
             	
-        	<ul class="side-nav">
+        	<ul class="side-nav fixed">
         
             	<li><form>
     			<!--  <label>Search Documentation</label> -->
@@ -16,7 +16,7 @@
   				<li><a href="http://students.iitm.ac.in/">Landing Page</a></li>
   				<li><a href="http://students2.iitm.ac.in/">Mess Registration</a></li>
   				<li><a href="http://students.iitm.ac.in/swiki/">Swiki</a></li>
-  				<li><a href="#">Contact Us</a></li>
+  				<li><a href="#">Notices</a></li>
   				<li class="heading">Trending</li>  				
   				<li><a href="#">Elections 2014</a></li>
 			</ul>

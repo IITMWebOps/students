@@ -1,6 +1,6 @@
    <!--
 <h2 class="ng-binding" style="margin-top:-48px; margin-left:25px; position:fixed;"> Students Portal</h2> -->
-        <div class="large-3 medium-4 small-12 columns" id="left-column-pos">
+        <div class="large-3 medium-4 small-12 columns" id="">
         <div class="">
     		<div class="leftColumn">
             
@@ -16,7 +16,7 @@
   				<li><a href="http://students.iitm.ac.in/">Landing Page</a></li>
   				<li><a href="http://students2.iitm.ac.in/">Mess Registration</a></li>
   				<li><a href="http://students.iitm.ac.in/swiki/">Swiki</a></li>
-  				<li><a href="#">Contact Us</a></li>
+  				<li><a href="#">Notices</a></li>
   				<li class="heading">Trending</li>  				
   				<li><a href="#">Elections 2014</a></li>
 			</ul>
