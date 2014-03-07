@@ -5,3 +5,5 @@ assets
 coreapp/appconfig.php
 coreapp/dbconfig.php
 apps/user/ldaplogin.php
+coreapp/config.app.php
+coreapp/config.db.php
