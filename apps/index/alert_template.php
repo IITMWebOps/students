@@ -3,14 +3,13 @@
     					<p> </p> 
       				<div class="alert-ubuntu" style="">
       				<div class="">
-<!--							<div style="" id="alert-ubuntu-left">
+						<div style="" id="alert-ubuntu-left">
 								<img src="<?=IMG_ROOT?>/alert_images/warning-one-piece.png " alt="warning" >
 							</div>      					
--->      					
+  					
       					<div style="" id="alert-ubuntu-right">
 														
 								<h1>{{status.text}} </h1>
-								<p>Please Log In using your LDAP Credentials. Contact WebOps Team if Problem persists. </p>
 							</div>
 						</div>	
 						</div>
