@@ -17,8 +17,9 @@
 	<script src="<?=JS_ROOT?>/vendor/modernizr.js"></script>
 </head>
 <body>
+
 <!-- ### Top Nav - Begin -->
-<div class="top-nav-bar" style="">
+<div class="fixed" >
 	<nav class="top-bar" data-topbar>
 		<ul class="title-area">
 			<li class="name">

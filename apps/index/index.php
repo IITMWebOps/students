@@ -54,6 +54,7 @@
 <script src="<?=JS_ROOT?>/vendor/jquery.js"></script>
 <script src="<?=JS_ROOT?>/foundation.min.js"></script>
 <script src="<?=JS_ROOT?>/angular.min.js"></script>
+<script src="<?=APPJS_ROOT?>/config.application.js"></script>
 <script src="<?=APPJS_ROOT?>/application.js"></script>
 <script src="<?=APPJS_ROOT?>/ngProgress.js"></script>
 <script>

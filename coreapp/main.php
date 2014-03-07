@@ -6,19 +6,8 @@ define('ROOT', dirname(dirname(__FILE__)), false );
 define('APP_ROOT', ROOT . DS . "apps", false );
 define('PUBLIC_ROOT', ROOT . DS . "public", false );
 
-define('APP_NAME', 'Students Portal', false);
-define('APP_HOST','http://students.iitm.ac.in',false);
-define('APP_SUBPATH','spapp',false);
-define('APP_URL', APP_HOST . '/'  . APP_SUBPATH, false);
 
-define('ASSETS_ROOT', APP_URL . '/'  . "assets", false );
-define('IMG_ROOT', ASSETS_ROOT . '/' . "images", false );
-define('CSS_ROOT', ASSETS_ROOT . '/' . "css", false );
-define('JS_ROOT', ASSETS_ROOT . '/' . "js", false );
-define('APPJS_ROOT', ASSETS_ROOT . '/' . "applicationjs", false );
-
-
-	require_once (ROOT . DS . 'coreapp' . DS . 'config.app.php');
+  require_once (ROOT . DS . 'coreapp' . DS . 'config.app.php');
 	require_once (ROOT . DS . 'coreapp' . DS . 'config.db.php');
 
   require_once (ROOT . DS . 'coreapp' . DS . 'class.user.php');

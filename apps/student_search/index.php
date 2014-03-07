@@ -55,7 +55,7 @@ else{
       echo" | Next";
     
     echo " </small> 
-        </h4><br><br><br><br><br>";
+        </h4>";
 }
 
 ?>
