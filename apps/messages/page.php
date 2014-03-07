@@ -9,7 +9,7 @@
   $uri_paths = explode('/',$_SERVER['REQUEST_URI']); 
 
   $num_of_paths = count($uri_paths);
-  if( $uri_paths[$num_of_paths-2] != 'pages' ){
+  if( $uri_paths[$num_of_paths-2] != 'messages' ){
     include PUBLIC_ROOT . DS . '404.html';
     exit();
   }
@@ -36,10 +36,10 @@
 if( $current_user->login() ){ 
 
     if( $current_user->has_active_post('Secretary') == $row->post_id or $current_user->por[0]['post_id'] == $row->post_id ){
-        echo "<a href='#/pages/edit?q=".$row->id."' class='button small'>Edit This Page </a>
-              <a href='#/pages/trash?q=".$row->id."' class='button small'> Trash This Page</a>   
-              <a href='#/pages/new' class='button small right'>Create Page</a>&nbsp;
-              <a href='#/pages/mypages' class='button small right'>My Pages</a>";
+        echo "<a href='#/messages/edit?q=".$row->id."' class='button small'>Edit This Page </a>
+              <a href='#/messages/trash?q=".$row->id."' class='button small'> Trash This Page</a>   
+              <a href='#/messages/new' class='button small right'>Create Page</a>&nbsp;
+              <a href='#/messages/mypages' class='button small right'>My Pages</a>";
   }
 }
 ?>

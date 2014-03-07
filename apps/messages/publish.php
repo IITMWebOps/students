@@ -30,7 +30,7 @@ $result = mysql_query($query) or trigger_error( mysql_error()  );
 if( $result ){
   $mark_staged_changes = mysql_query("UPDATE `stu_portal`.`pages_temp` SET `staged_changes` = '0' WHERE `id` = ".$row->id." LIMIT 1") or trigger_error(mysql_error() );
   render_alert('Successfully Published');
-  redirect_to('/pages/'.$row->link, true);
+  redirect_to('/messages/'.$row->link, true);
 }
 else
   http_response_code(500);

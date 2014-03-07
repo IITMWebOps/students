@@ -15,7 +15,7 @@ if( empty($data->link) ){
   page_title("New Page");
 ?>
   <br><br><br>
-  <form ng-submit="app.request({ location: '/pages/new', object: pages})">
+  <form ng-submit="app.request({ location: '/messages/new', object: pages})">
           <div class="row">
             <div class="small-8">
               <div class="row">
@@ -61,7 +61,7 @@ else{
   $query = "INSERT INTO stu_portal.pages_temp ( link, name, content, post_id, created_position_of_responsibility_id, updated_position_of_responsibility_id,staged_changes, created_at ) VALUES ( '$data->link','$data->name','This is content of $data->name page','".$current_user->por[0]['post_id']."', '".$current_user->por[0]['por_id']."','".$current_user->por[0]['por_id']."','1','".date("Y-m-d H:i:s")."' )";
   $result = mysql_query($query) or trigger_error( mysql_error() );
   if($result)
-    redirect_to('/pages/edit?q='.mysql_insert_id() , true ); 
+    redirect_to('/messages/edit?q='.mysql_insert_id() , true ); 
   else
     http_response_code(500); 
 }

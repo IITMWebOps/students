@@ -21,7 +21,7 @@ $pages_result = mysql_query($pages_query) or trigger_error(mysql_error() );
 if ( $pages_result ){
   $pages_temp_result = mysql_query($pages_temp_query) or trigger_error(mysql_error() );
   if( $pages_temp_query )
-    redirect_to('/pages/mypages',true );
+    redirect_to('/messages/mypages',true );
   else
     http_response_code(500);
 }

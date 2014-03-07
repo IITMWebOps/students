@@ -5,7 +5,7 @@
 </script>
 <br><br>
 <div ng-controller="PageSearchCtrl">
-<form ng-submit="app.reqLite('/pages/?q='+pagesearch)">
+<form ng-submit="app.reqLite('/messages/?q='+pagesearch)">
  <div class="row">
     <div class="large-8 large-centered columns">
       <div class="row collapse">
@@ -52,11 +52,11 @@ else{
         <h4 class='text right'>
           <small> Showing ".$limit_f." - ".$limit_t." of ".$count_result[0];
     if( $limit_f > 0 ) 
-        echo" <a href='#/pages/?q=".$_GET['q']."&f=$new_limit_f'> | Previous</a> ";
+        echo" <a href='#/messages/?q=".$_GET['q']."&f=$new_limit_f'> | Previous</a> ";
     else 
         echo" | Previous";
     if( $show_next ) 
-        echo" <a href='#/pages/?q=".$_GET['q']."&f=$limit_t'> | Next</a> ";
+        echo" <a href='#/messages/?q=".$_GET['q']."&f=$limit_t'> | Next</a> ";
     else 
       echo" | Next";
     
@@ -65,11 +65,11 @@ else{
 
     while($row = mysql_fetch_object($result) ){
         echo "<blockquote>
-         <h4><a href='#/pages/".$row->link."'>". $row->name."</a>  </h4>";
+         <h4><a href='#/messages/".$row->link."'>". $row->name."</a>  </h4>";
         if( $current_user->login() )
           if( $current_user->has_active_post('Secretary') == $row->post_id or $current_user->por[0]['post_id'] == $row->post_id )
-            echo"<a href='#/pages/edit?q=".$row->id."' class='button tiny right'> Edit</a>
-                 <a ng-click=\"app.reqLite('/pages/trash?q=".$row->id."')\" class='button tiny right'> Trash it </a>";
+            echo"<a href='#/messages/edit?q=".$row->id."' class='button tiny right'> Edit</a>
+                 <a ng-click=\"app.reqLite('/messages/trash?q=".$row->id."')\" class='button tiny right'> Trash it </a>";
 
             echo "# Created by : ".GetPostName($row->post_id)."<p class='text right'> Updated at :  $row->updated_at</p>
         </blockquote>";

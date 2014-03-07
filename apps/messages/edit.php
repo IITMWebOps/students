@@ -38,7 +38,7 @@ $script = "<script src='".JS_ROOT."/ckeditor/ckeditor.js'></script>
       });
       function savepageData(){
         data = CKEDITOR.instances.editable.getData();
-        $.post( '/".APP_SUBPATH."/pages/savepage', { htmldata: data, id: '".$row->id."' })
+        $.post( '/".APP_SUBPATH."/messages/savepage', { htmldata: data, id: '".$row->id."' })
             .done(function() {
               return true;
         });
@@ -53,7 +53,7 @@ echo $script."<br><br>
     </div>
   </div>
   <a id = '".$row->id."savebutton' class='button small'>Save</a>
-  <a id = 'publish".$row->id."' ng-click=\"app.request({ location: '/pages/publish?q=".$row->id."'})\" class='button small'>Publish and Exit</a>
-  <a href='#/pages/new' class='button small right'>Create Page</a>&nbsp;
-  <a href='#/pages/mypages' class='button small right'>My Pages</a>";
+  <a id = 'publish".$row->id."' ng-click=\"app.request({ location: '/messages/publish?q=".$row->id."'})\" class='button small'>Publish and Exit</a>
+  <a href='#/messages/new' class='button small right'>Create Page</a>&nbsp;
+  <a href='#/messages/mypages' class='button small right'>My Pages</a>";
 ?>

@@ -1,3 +1,7 @@
+<?php
+  if(!$current_user->login() ) redirect_to('/user/login', true);
+?>
+
 <script>
   function PageSearchCtrl($scope){
     $scope.pagesearch="<?=$_GET['q']?>";
@@ -5,7 +9,7 @@
 </script>
 <br><br>
 <div ng-controller="PageSearchCtrl">
-<form ng-submit="app.reqLite('/pages/?q='+pagesearch)">
+<form ng-submit="app.reqLite('/messages/mypages?q='+pagesearch)">
  <div class="row">
     <div class="large-8 large-centered columns">
       <div class="row collapse">
@@ -35,11 +39,13 @@ $limit_f = isset($_GET['f']) ? $_GET['f'] : '0';
 $limit_query = "LIMIT ".$limit_f." , ".$range;
 $search = isset($_GET['q']) ? "AND (`link` LIKE '%".$_GET['q']."%' OR `name` LIKE '%".$_GET['q']."%')" : "";
 
-$query="SELECT * FROM `stu_portal`.`pages` WHERE `trash` = '0' ".$search."  ORDER BY `updated_at` ".$limit_query;
+$my_post_id = $current_user->por[0]['post_id'];
+
+$query="SELECT * FROM `stu_portal`.`pages_temp` WHERE `post_id` = '".$my_post_id."' AND `trash` = '0' ".$search."  ORDER BY `updated_at` ".$limit_query;
 $result = mysql_query($query) or trigger_error(mysql_error() );
 
 
-$count = mysql_query("SELECT COUNT(link) FROM stu_portal.pages where `trash`='0' ".$search." ORDER BY `updated_at` ");
+$count = mysql_query("SELECT COUNT(link) FROM stu_portal.pages_temp where `post_id`='".$my_post_id."' AND `trash` = '0' ".$search." ORDER BY `updated_at` ");
 $count_result = mysql_fetch_array($count);
 
 if( !mysql_num_rows($result) ) 
@@ -52,11 +58,11 @@ else{
         <h4 class='text right'>
           <small> Showing ".$limit_f." - ".$limit_t." of ".$count_result[0];
     if( $limit_f > 0 ) 
-        echo" <a href='#/pages/?q=".$_GET['q']."&f=$new_limit_f'> | Previous</a> ";
+        echo" <a href='#/messages/mypages?q=".$_GET['q']."&f=$new_limit_f'> | Previous</a> ";
     else 
         echo" | Previous";
     if( $show_next ) 
-        echo" <a href='#/pages/?q=".$_GET['q']."&f=$limit_t'> | Next</a> ";
+        echo" <a href='#/messages/mypages?q=".$_GET['q']."&f=$limit_t'> | Next</a> ";
     else 
       echo" | Next";
     
@@ -65,11 +71,12 @@ else{
 
     while($row = mysql_fetch_object($result) ){
         echo "<blockquote>
-         <h4><a href='#/pages/".$row->link."'>". $row->name."</a>  </h4>";
-        if( $current_user->login() )
-          if( $current_user->has_active_post('Secretary') == $row->post_id or $current_user->por[0]['post_id'] == $row->post_id )
-            echo"<a href='#/pages/edit?q=".$row->id."' class='button tiny right'> Edit</a>
-                 <a ng-click=\"app.reqLite('/pages/trash?q=".$row->id."')\" class='button tiny right'> Trash it </a>";
+         <h4><a href='#/messages/".$row->link."'>". $row->name."</a>  </h4>";
+        echo"<a href='#/messages/trash?q=".$row->id."' class='button tiny right'> Move to trash</a>";
+        echo"<a href='#/messages/edit?q=".$row->id."' class='button tiny right'> Edit</a>";
+        if( $row->staged_changes ) 
+          echo "<a id = 'publish".$row->id."' ng-click=\"app.request({ location:'/messages/publish?q=".$row->id."'} )\" class='button tiny right'> Publish </a>
+                <a href='#/messages/discard?q=".$row->id."' class='button tiny right'> Discard </a>";
 
             echo "# Created by : ".GetPostName($row->post_id)."<p class='text right'> Updated at :  $row->updated_at</p>
         </blockquote>";

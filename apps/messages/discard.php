@@ -30,7 +30,7 @@ else
 $result = mysql_query($query) or trigger_error( mysql_error()  );
 if( $result ){
   render_alert('Successfully Discarded');
-  redirect_to('/pages/mypages', true);
+  redirect_to('/messages/mypages', true);
 }
 else
   http_response_code(500);
