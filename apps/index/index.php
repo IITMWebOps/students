@@ -21,7 +21,7 @@
 <br><br>
 <div class="row">
   <div class="small-7 columns">
-     <h2> {{app.title() | capitalize}}</h2>
+     <h2 ng-bind = "app.title() | capitalize"></h2>
   </div>
   <div class="small-5 columns">
     <alert-status></alert-status>

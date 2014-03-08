@@ -9,7 +9,7 @@
   					
       					<div style="" id="alert-ubuntu-right">
 														
-								<h1>{{status.text}} </h1>
+								<h1 >{{status.text}}</h1>
 							</div>
 						</div>	
 						</div>

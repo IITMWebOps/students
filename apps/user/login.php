@@ -16,7 +16,7 @@ if ( $current_user->login() ){
                           object: login,
                           title: \'login\',
                           alert: true,
-                          alertAdv: { 0: {code: \'403\',text: \'Invalid Username or Password\', cls: \'warning \'},
+                          alertAdv: { 0: {code: \'403\',text: \'Invalid Username or Password<br><p>Please use your LDAP Login credentials to login with students portal</p>\', cls: \'warning \'},
                                       1: {code: \'200\',text: \'Successfully Logged In\', cls:\'success\'}} })">
           <div class="row">
             <div class="small-8">
