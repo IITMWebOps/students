@@ -9,7 +9,7 @@
         
             	<li><form>
     			<!--  <label>Search Documentation</label> -->
-    			<input tabindex="1" id="" type="search" placeholder="Search for Students | Eg: Yash" ng-model="StudentSearch.search" ng-change = "app.request({location: '/student_search?search='+StudentSearch.search, progress: false, alert: false, method: 'POST', changeURL: true })" ng-focus = "app.request({location: '/student_search?search='+StudentSearch.search, progress: false, alert: false, method: 'POST', changeURL: true })" autocomplete="off">
+    			<input tabindex="1" id="" type="search" placeholder="Search | Eg: Yash" ng-model="StudentSearch.search" ng-change = "app.request({location: '/search?q='+StudentSearch.search, progress: false, alert: false, method: 'POST', changeURL: true })" ng-focus = "app.request({location: '/search?q='+StudentSearch.search, progress: false, alert: false, method: 'POST', changeURL: true })" autocomplete="off">
   			</form></li>
 				<li class="heading">Trending</li>  				
   				<li><a href="#">Elections 2014</a></li>  			
