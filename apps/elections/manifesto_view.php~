@@ -7,8 +7,8 @@
   <li class="current"><a href="#">Write Up</a></li>
 </ul>
 </div>
-<div class="pdf-view">
-<object data="<?=IMG_ROOT?>/social/WB.pdf" type="application/pdf">
-alt : <a href="<?=IMG_ROOT?>/social/WB.pdf">test.pdf</a>
+<div class="pdf-div">
+<object data="<?=IMG_ROOT?>/social/WC.pdf" type="application/pdf" class="pdf-object">
+alt : <a href="<?=IMG_ROOT?>/social/WC.pdf">test.pdf</a>
 </object>
 </div>

@@ -1,34 +1,36 @@
 <?php
 
 page_title('Elections');
-if(!isset($_GET['level')){
-	if(isset($_GET['post'] or isset($_GET['username'] or $_GET['doc']){
-		redirect_to("/elections/view");
+if(!isset($_GET['level'])){
+	if(isset($_GET['post']) or isset($_GET['username']) or isset($_GET['doc'])){
+		redirect_to("/elections/view",true);
 	}
 	else {
 		// display levels
 	}
-else if (!isset($_GET['post'])) {
-	if (isset($_GET['username'] or $_GET['doc']){
-		redirect_to("/elections/view?level=".$_GET['level']);
+}
+elseif (!isset($_GET['post'])) {
+	if (isset($_GET['username']) or isset($_GET['doc'])){
+		redirect_to("/elections/view?level=".$_GET['level'],true);
 	}
 	else {
 		// display posts
 	}
-else if (!isset($_GET['username'])) {
-	if (isset($_GET['doc']){
-		redirect_to("/elections/view?level=".$_GET['level']."&post=".$_GET['post']);
+}
+elseif (!isset($_GET['username'])) {
+	if (isset($_GET['doc'])){
+		redirect_to("/elections/view?level=".$_GET['level']."&post=".$_GET['post'],true);
 	}
 	else {
 		// display usernames
-	}
-else if (!isset($_GET['doc'])) {
+	}}
+elseif (!isset($_GET['doc'])) {
 		// display docs
 	}
 else {
 	// display doc
 	}
-}
+
 
 $data->level = $_GET['level'];
 $data->post = $_GET['post'];

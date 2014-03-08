@@ -5570,7 +5570,11 @@ li.social-icon:hover{
 .upload-input {
 	padding: 6px;
 }
-.pdf-view {
+.pdf-div {
 	height: 100%;
+	width: 100%;
+}
+.pdf-object{
+	height: 240%;
 	width: 100%;
 }
