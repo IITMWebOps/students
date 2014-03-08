@@ -13,7 +13,6 @@ if( $current_user->has_active_post('Secretary') != $row->post_id and $current_us
   http_response_code(500);
   exit();
 }
-
 $update_query = "UPDATE `stu_portal`.`pages_temp` SET `content` = '".$_POST['htmldata']."', staged_changes = '1' WHERE `pages_temp`.`id` = ".$_POST['id']." LIMIT 1";
 $update_result = mysql_query($update_query) or trigger_error(mysql_error());
 

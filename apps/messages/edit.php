@@ -37,7 +37,7 @@ $script = "<script src='".JS_ROOT."/ckeditor/ckeditor.js'></script>
         $('#".$row->id."savebutton').text('Saved');
       });
       function savepageData(){
-        data = CKEDITOR.instances.editable.getData();
+        data = CKEDITOR.instances.editable".$row->id.".getData();
         $.post( '/".APP_SUBPATH."/messages/savepage', { htmldata: data, id: '".$row->id."' })
             .done(function() {
               return true;
@@ -48,7 +48,7 @@ $script = "<script src='".JS_ROOT."/ckeditor/ckeditor.js'></script>
 
 echo $script."<br><br>
   <div id = '".$row->id."canedit'>
-    <div id='editable' contenteditable='true'>
+    <div id='editable".$row->id."' contenteditable='true'>
       $row->content
     </div>
   </div>
