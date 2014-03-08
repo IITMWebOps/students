@@ -18,6 +18,8 @@ else{
 }
 
 $limit1 = 10;
+$limit2 = 10;
+$limit3 = 10;
 
 $query_pages = "SELECT DISTINCT name,link,content,trash 
 		  FROM `stu_portal`.`pages` 
@@ -31,7 +33,6 @@ $count_pages = mysql_query("SELECT COUNT(id)
 $count_pages_result = mysql_fetch_array($count_pages);
 echo "<script>alert(".$count_pages_result[0].");</script>";
 
-$limit2 = $limit1 - $count_pages_result[0];
 $query_applications = "SELECT DISTINCT name,link 
 		  FROM `stu_portal`.`applications` 
 		  WHERE name like '%$data->search%'
@@ -43,8 +44,6 @@ $count_applications = mysql_query("SELECT COUNT(id)
 					  ");
 $count_applications_result = mysql_fetch_array($count_applications);
 
-
-$limit3 = $limit1 - $count_pages_result[0] - $count_applications_result[0];
 $query_students = "SELECT DISTINCT username,fullname,room,hostel,contact 
 		  FROM `stu_portal`.`users` 
 		  WHERE username like '%$data->search%' or fullname like '%$data->search%' or email like '%$data->search%' or contact like '%$data->search%'
