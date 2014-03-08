@@ -9,7 +9,9 @@
 	<!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
 	<link rel="stylesheet" href="<?=CSS_ROOT?>/normalize.css">
 	<link rel="stylesheet" href="<?=CSS_ROOT?>/foundation.css">
-  <link rel="stylesheet" href="<?=CSS_ROOT?>/ngProgress.css">
+   <link rel="stylesheet" href="<?=CSS_ROOT?>/ngProgress.css">
+ 	<link rel="stylesheet" href="<?=CSS_ROOT?>/font-awesome/css/font-awesome.min.css">
+ 
 
 	<!-- If you are using the gem version, you need this only -->
 	<link rel="stylesheet" href="<?=CSS_ROOT?>/app.css">
@@ -23,7 +25,7 @@
 	<nav class="top-bar" data-topbar>
 		<ul class="title-area">
 			<li class="name">
-				<h1><a href="#">Students Portal</a></h1>
+				<h1><a href="#"><i class="fa fa-home"></i> | Students Portal</a></h1>
 			</li>
 			<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
 		</ul>
