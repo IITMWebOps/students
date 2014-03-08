@@ -82,7 +82,7 @@ $all_hostels = substr($all_hostels, 0, -1).' ]';
       				<span class="prefix">Hostel</span>
     				</div>
    				<div class="small-9 columns">
-     			 		<select class="" ng-model='profile.hostel' ng-options = 'h.name as h.name for h in AllHostels'>
+     			 		<select class="" ng-model='profile.hostel' ng-options = 'h.name as h.name for h in AllHostels'></select>
     				</div>
   				</div>	
   			</div>	
@@ -90,7 +90,7 @@ $all_hostels = substr($all_hostels, 0, -1).' ]';
 	</div>
 	<div class="small-12 medium-4 columns">
 			<a class="th radius" >
-  				<img id="profile-pic" src="../../../spapp/assets/images/alert_images/yash.jpg">
+  				<img id="profile-pic" src="<?=IMG_ROOT?>/alert_images/yash.jpg">
 			</a>
 	</div>
 	</div> 

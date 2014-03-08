@@ -3435,18 +3435,19 @@ blockquote p {
 .reveal-modal {
   visibility: hidden;
   display: none;
-  position: absolute;
+  position: fixed;
   left: 50%;
   z-index: 99;
-  height: auto;
+  height: 100%;
   margin-left: -40%;
+  margin-top:-100px;
   width: 80%;
   background-color: white;
-  padding: 1.25rem;
+  padding: 0rem;
   border: solid 1px #666666;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  top: 50px; }
+  top: 0px; }
   .reveal-modal .column,
   .reveal-modal .columns {
     min-width: 0; }
@@ -3466,7 +3467,7 @@ blockquote p {
 
 @media only screen and (min-width: 40.063em) {
   .reveal-modal {
-    padding: 1.875rem;
+    padding: 1.175rem;
     top: 6.25rem; }
     .reveal-modal.tiny {
       margin-left: -15%;
@@ -5572,9 +5573,10 @@ li.social-icon:hover{
 }
 .pdf-div {
 	height: 100%;
-	width: 100%;
+	width: 80%;
 }
 .pdf-object{
-	height: 240%;
+	height: 100%;
 	width: 100%;
+	padding:0;
 }

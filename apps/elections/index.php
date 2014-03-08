@@ -19,10 +19,10 @@
 <br><br><br>
 <div class="rows">
 	<div class="small-6 columns">
-		<input type="submit" class="button expand large secondary" value="General Body Manifestos">
+		<a href="#/elections/view?category=GBE" class="button expand large secondary">General Body Manifestos</a>
 	</div>
 	<div class="small-6 columns">
-		<input type="submit" class="button expand large  secondary" value="Hostel Body Manifestos">
+		<a href="#/elections/view?category=HBE" class="button expand large  secondary">Hostel Body Manifestos</a>
 	</div>
 </div>
 

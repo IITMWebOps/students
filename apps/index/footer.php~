@@ -2,7 +2,7 @@
 <div class="fixed-bot">
 		<div class="hide-for-small hide-for-medium" id="Footer-Body">                               	
           <p>Copyrights - Institute WebOps</p>
-          
+			<a  data-reveal-id="myModal" data-reveal>Modal…</a>          
 				
 				<div id="social-icons">
 									<ul>
@@ -49,7 +49,7 @@
 </div>	
 
 <div class="">
-		<div class="show-for-medium-up" id="Footer-Body">                               	
+		<div class="show-for-medium-down" id="Footer-Body">                               	
           <p>Copyrights - Institute WebOps</p>
           
 				
@@ -95,4 +95,4 @@
 									</ul>
 								</div>				
 		</div>				
-</div>									
+</div>
