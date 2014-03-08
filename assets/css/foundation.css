@@ -5567,4 +5567,10 @@ li.social-icon:hover{
 	max-height: 250px;
 	max-width: 250px;
 }
-
+.upload-input {
+	padding: 6px;
+}
+.pdf-view {
+	height: 100%;
+	width: 100%;
+}

@@ -76,13 +76,13 @@ else{
         </h4><br>";
     while($row = mysql_fetch_object($result_pages) ){
        echo "<blockquote>
-            <h4><a href='#/messages/$row->link'>". strtoupper($row->name)."</a></h4>
+            <h4><a href='#/messages/$row->link'>". $row->name."</a></h4>
             <span># Created by : ".GetPostName($row->post_id)."<p class='text right'> Updated at :  $row->updated_at</p></span>
         </blockquote>";
     }
 	while($row = mysql_fetch_object($result_applications) ){
        echo "<blockquote>
-            <h4><a href='$row->link' target='_blank'>". strtoupper($row->name)."</a></h4>
+            <h4><a href='$row->link' target='_blank'>". $row->name."</a></h4>
             <p># $row->link</p>
         </blockquote>";
     }

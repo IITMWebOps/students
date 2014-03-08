@@ -53,7 +53,6 @@ app.factory('GetResponse', function($http, $location, $q, $rootScope, $timeout, 
 
   getresponse.request = function(Args){
       Args.target = Args.hasOwnProperty('target') ? Args.target : 'view';
-      console.log(this.history);
       if( Args.target == 'view' ){
 // Adding URL To history
         if ( this.history[0] != Args.location )

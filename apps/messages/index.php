@@ -10,7 +10,7 @@
     <div class="large-8 large-centered columns">
       <div class="row collapse">
         <div class="small-10 columns">
-        <input type="text" ng-model="pagesearch"  placeholder="Search Page" >
+        <input type="text" ng-model="pagesearch"  placeholder="Search Messages" >
         </div>
         <div class="small-2 columns">
           <input type="submit" value="Go" class="button postfix">

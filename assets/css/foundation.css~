@@ -5458,8 +5458,7 @@ th.hide-for-touch {
 /* Additions by Yash */
 #Footer-Body {
 	background-color: transparent;
-	margin-top: -50px;
-	
+	margin-top: -50px;	
 	
 }  
 #Footer-Body p {
@@ -5568,4 +5567,10 @@ li.social-icon:hover{
 	max-height: 250px;
 	max-width: 250px;
 }
-
+.upload-input {
+	padding: 6px;
+}
+.pdf-view {
+	height: 100%;
+	width: 100%;
+}

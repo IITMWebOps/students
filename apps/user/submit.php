@@ -30,10 +30,10 @@ if (isset($data->username) and isset($data->password) ){
 
       $userRow = mysql_fetch_object($result);
 
-    else
-
+    else{
+	  
       http_response_code( 403,' Invalid Username and Password  ' );
-
+	}
     AppConfig::LDAP ? require_once 'ldaplogin.php' : require_once 'studentlogin.php';
 
     if ( $current_user->login() ) echo $script;
@@ -43,7 +43,8 @@ if (isset($data->username) and isset($data->password) ){
 
     http_response_code( 403,' Invalid Username and Password '  );
 
-}else
-
-  http_response_code( 403,' Invalid Username and Password '  );
+}else{
+  render_alert('Permission Denied');
+  redirect_to('/user/login', true);
+}
 ?>

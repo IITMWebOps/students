@@ -12,7 +12,7 @@
     			<input tabindex="1" id="" type="search" placeholder="Search | Eg: Yash" ng-model="StudentSearch.search" ng-change = "app.request({location: '/search?q='+StudentSearch.search, progress: false, alert: false, method: 'POST', changeURL: true })" ng-focus = "app.request({location: '/search?q='+StudentSearch.search, progress: false, alert: false, method: 'POST', changeURL: true })" autocomplete="off">
   			</form></li>
 				<li class="heading">Trending</li>  				
-  				<li><a href="#"><i class="fa fa-list-ul"></i> | Elections 2014</a></li>  			
+  				<li><a href="<?=APP_URL?>/#/elections"><i class="fa fa-list-ul"></i> | Elections 2014</a></li>  			
   				<br>	
   				<li class="heading">Shortcuts</li>
   				<li><a href="http://students.iitm.ac.in/"><i class="fa fa-windows"></i> | Landing Page</a></li>
