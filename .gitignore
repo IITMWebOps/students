@@ -8,3 +8,4 @@ apps/user/ldaplogin.php
 coreapp/config.app.php
 coreapp/config.db.php
 .htaccess
+assets/config.application.js
