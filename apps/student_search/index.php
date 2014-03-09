@@ -1,3 +1,28 @@
+<script>
+  function StudentSearchCtrl($scope){
+    $scope.studentsearch="<?=$_GET['q']?>";
+  }
+</script>
+<br><br>
+<div ng-controller="StudentSearchCtrl">
+<form ng-submit="app.reqLite('/student_search/?search='+studentsearch)">
+ <div class="row">
+    <div class="large-8 large-centered columns">
+      <div class="row collapse">
+        <div class="small-10 columns">
+        <input type="text" ng-model="studentsearch"  placeholder="Search Students" >
+        </div>
+        <div class="small-2 columns">
+          <input type="submit" value="Go" class="button postfix">
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+
+
+
 <?php
 
 page_title('Student Search');

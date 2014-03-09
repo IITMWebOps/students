@@ -1,6 +1,6 @@
 <?php
   if( !$current_user->login() ) redirect_to('/user/login',true);
-  page_title($current_user->nick . "<p>hi</p>");
+  page_title($current_user->nick);
 ?>
 
 <div class="rows">

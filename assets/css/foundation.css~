@@ -3440,7 +3440,7 @@ blockquote p {
   z-index: 99;
   height: 100%;
   margin-left: -40%;
-  margin-top:-80px;
+  margin-top:-100px;
   width: 80%;
   background-color: white;
   padding: 0rem;
@@ -3720,7 +3720,7 @@ blockquote p {
 /* Progress Bar */
 .progress {
   background-color: #f6f6f6;
-  height: 1.5625rem;
+  height: 0;
   border: 1px solid #cccccc;
   padding: 0.125rem;
   margin-bottom: 0.625rem; }
