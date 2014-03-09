@@ -15,7 +15,7 @@
 	</div>
 	<div class="small-6 columns">
 			<a class="th radius" >
-  					<img id="profile-pic" src="../../../spapp/assets/images/alert_images/yash.jpg">
+  					<img id="profile-pic" src="<?=IMG_ROOT?>/alert_images/yash.jpg">
 			</a>
 	</div>
 </div>

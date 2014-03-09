@@ -2,8 +2,6 @@
 <div class="fixed-bot">
 		<div class="hide-for-small hide-for-medium" id="Footer-Body">                               	
           <p>Copyrights - Institute WebOps</p>
-          
-				
 				<div id="social-icons">
 									<ul>
 										<li class="social-icon twitter">
@@ -95,4 +93,4 @@
 									</ul>
 								</div>				
 		</div>				
-</div>									
+</div>

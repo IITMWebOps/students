@@ -33,11 +33,11 @@ else{
     else 
       echo" | Next";
     //	Displaying the Next Page Tab ends;    
-    echo " </small> 
+      echo " </small> 
         </h4><br>";
     while($row = mysql_fetch_object($result) ){
        echo "<blockquote>
-            <h4>". strtoupper($row->username)."  |  $row->fullname</h4>
+            <h4><i class="fa fa-user"></i>". strtoupper($row->username)."  |  $row->fullname</h4>
             <p># $row->room  $row->hostel</p>
         </blockquote>";
     }

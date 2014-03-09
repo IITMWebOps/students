@@ -1,3 +1,35 @@
+<?php
+if (!$current_user->login()) redirect_to('/user/login',true);
+$query = "SELECT * FROM `stu_portal`.`nominations` WHERE user_id=$current_user->id";
+$result = mysql_query($query) or trigger_error(mysql_error());
+$num_rows = mysql_num_rows($result);
+//if ($num_rows)	redirect_to('/elections/manifesto_edit',true);?>
+
+<script>
+  function eapply_SubmitCtrl($scope){
+    $scope.ecat = [ { 'category': 'gbe', 'name': 'General Body Elections'}, 
+                    { 'category': 'hbe', 'name': 'Hostel Body Elections'}];
+    $scope.apply = {'category': 'gbe'};
+
+    <?php
+    $result = mysql_query("SELECT pi.id, pi.post_id, p.post_name, p.top_level_post_name
+      FROM `stu_portal`.`post_instances` AS pi LEFT JOIN `stu_portal`.`posts` AS p ON (pi.post_id = p.id)
+      WHERE pi.open = 1") or trigger_error(mysql_error());
+    $gbe_p = "";
+    $hbe_p = "";
+    while($row = mysql_fetch_object($result) ){
+      if ($row->top_level_post_name == 'Secretary' or $row->top_level_post_name == 'Branch Councillor' or $row->top_level_post_name == 'Councillor' )
+        $gbe_p.= "<option value='".$row->id."'>".$row->post_name." ".$row->top_level_post_name."</option>";
+      else
+        $hbe_p.="<option value='".$row->id."'>".$row->post_name." ".str_replace('Hostel ','',$row->top_level_post_name)."</option>";
+    }
+?>
+
+
+  }
+ </script>
+<div ng-controller = "eapply_SubmitCtrl">
+
 <br><br>  
 <div class="small-12 large-8 large-centered columns">
 		<div class="row collapse">
@@ -5,9 +37,7 @@
       		<span class="prefix">Category</span>
     		</div>
    		<div class="small-9 large-10 columns">       
-       		<select>       
-          		<option value="gbe">General Body Elections</option>
-          		<option value="hbe">Hostel Body Elections</option>
+       		<select ng-model="apply.category" ng-options="a.category as a.name for a in ecat" >       
         		</select>
          </div>
   		</div>
@@ -15,15 +45,13 @@
     		<div class="small-3 large-2 columns">
       		<span class="prefix">Post</span>
     		</div>
-   		<div class="small-9 large-10 columns " >       
-       		<select >
-			 		<option value="null"></option>	          
-          		<option value="gbe">General Secretary</option>
-          	<option value="hbe">Hostel Affairs Secretary</option>
-        		</select>
+      <div class="small-9 large-10 columns " ng-switch on="apply.category">  
+            <select ng-switch-when="gbe" ><?=$gbe_p?></select>
+            <select ng-switch-when="hbe" ><?=$hbe_p?></select>
+            <select ng-switch-default > <option value="null"> --- </option></select>
          </div>
   		</div>	
-		  		
+		 	
   		<div class="row collapse">
     		<div class="small-3 large-2 columns">
       		<span class="prefix">Manifesto</span>
@@ -40,8 +68,24 @@
        		<input type="file" ng-file-select="onFileSelect($files)" class="button secondary upload-input">
          </div>
   		</div>
+		<div class="row collapse">
+    		<div class="small-3 large-2 columns">
+      		<span class="prefix">Image</span>
+    		</div>
+   		<div class="small-9 large-10 columns " >       
+       		<input type="file" ng-file-select="onFileSelect($files)" class="button secondary upload-input">
+         </div>
+  		</div>	
 </div>
 <hr>
-<div>
-	<input type="submit"  class="button " value="Save Changes" >
+<div class="small-12 columns">
+	<div class="small-6 medium-4 columns">
+		<input type="submit"  class="button expand" value="Save Changes" >
+	</div>
+	<div class="small-6 medium-4 columns">
+		<a href="#/elections/" class="button expand secondary">Cancel</a>
+	</div>
+</div>
+
+
 </div>

@@ -23,7 +23,7 @@
         		</select>
          </div>
   		</div>	
-		  		
+		 	
   		<div class="row collapse">
     		<div class="small-3 large-2 columns">
       		<span class="prefix">Manifesto</span>
@@ -40,5 +40,21 @@
        		<input type="file" ng-file-select="onFileSelect($files)" class="button secondary upload-input">
          </div>
   		</div>
+		<div class="row collapse">
+    		<div class="small-3 large-2 columns">
+      		<span class="prefix">Image</span>
+    		</div>
+   		<div class="small-9 large-10 columns " >       
+       		<input type="file" ng-file-select="onFileSelect($files)" class="button secondary upload-input">
+         </div>
+  		</div>	
 </div>
 <hr>
+<div class="small-12 columns">
+	<div class="small-6 medium-4 columns">
+		<input type="submit"  class="button expand" value="Save Changes" >
+	</div>
+	<div class="small-6 medium-4 columns">
+		<a href="" class="button expand secondary">Cancel</a>
+	</div>
+</div>
