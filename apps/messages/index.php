@@ -71,7 +71,7 @@ else{
             echo"<a href='#/messages/edit?q=".$row->id."' class='button tiny right'> Edit</a>
                  <a ng-click=\"app.reqLite('/messages/trash?q=".$row->id."')\" class='button tiny right'> Trash it </a>";
 
-            echo "# Created by : ".GetPostName($row->post_id)."<p class='text right'> Updated at :  $row->updated_at</p>
+            echo "<i class='fa fa-user'></i> | ".GetPostName($row->post_id)."<p class='text right'><i class='fa fa-clock-o'></i> | $row->updated_at </p>
         </blockquote>";
     }
 }

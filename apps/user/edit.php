@@ -60,7 +60,7 @@ $all_hostels = substr($all_hostels, 0, -1).' ]';
       		<span class="prefix">Phone No.</span>
     		</div>
    		<div class="small-9 large-10 columns">
-     			 <input type="text" class="" ng-model='profile.contact'>
+     			 <input maxlength="10" type="text" class="" ng-model='profile.contact'>
     		</div>
   		</div>
 		<div class="row collapse">
@@ -78,7 +78,7 @@ $all_hostels = substr($all_hostels, 0, -1).' ]';
       				<span class="prefix">Room</span>
     				</div>
    				<div class="small-9 columns">
-     			 		<input type="text" class="" ng-model='profile.room' >
+     			 		<input maxlength="4" type="text" class="" ng-model='profile.room' >
     				</div>
   				</div>	
   			</div>

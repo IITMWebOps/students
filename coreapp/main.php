@@ -5,6 +5,8 @@ define('DS', DIRECTORY_SEPARATOR, false);
 define('ROOT', dirname(dirname(__FILE__)), false );
 define('APP_ROOT', ROOT . DS . "apps", false );
 define('PUBLIC_ROOT', ROOT . DS . "public", false );
+define('ASSETS_DIR_ROOT', ROOT . DS . "assets", false );
+define('FILE_DIR_ROOT', ASSETS_DIR_ROOT . DS . "files", false );
 
 
   require_once (ROOT . DS . 'coreapp' . DS . 'config.app.php');
