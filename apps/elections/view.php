@@ -93,18 +93,26 @@ $all_hostels = substr($all_hostels, 0, -1) . ' ]';
 				if ($row->top_level_post_name == 'Secretary' or $row->top_level_post_name == 'Councillor' or $row->top_level_post_name == 'Branch Councillor')
 					$post = str_replace(' ','_',$row->post_name.'_'.$row->top_level_post_name);
 				elseif ($row->top_level_post_name == 'Hostel Secretary') 
-					$post = $row->hostel.'_'.str_replace(' ','_',$row->post_name.'_'.str_replace('Hostel ','',$row->top_level_post_name));
+					$post = ucfirst(strtolower($row->hostel)).'_'.str_replace(' ','_',$row->post_name.'_'.str_replace('Hostel ','',$row->top_level_post_name));
 				if ($post == $_GET['post']){
+				
+				$name_parts=explode(" ", $row->fullname);
+			for($i=0;$i<sizeof($name_parts);$i++)
+				$name_parts[$i]= ucfirst(strtolower($name_parts[$i]));
+			$row->fullname = implode(" ", $name_parts);
+						if(!file_exists(FILE_DIR_ROOT.'/'.$row->image)) $image_file= IMG_ROOT."/default/user-default-blue.png";
+						else $image_file = FILE_ROOT.'/'.$row->image;
+				
 				echo "<div class='small-12 columns'>";
-					echo "<div class='small-5 medium-2 columns'><a class='th '><img src='".IMG_ROOT."/alert_images/$row->image'></a></div>";        
-					echo "<div class='small-7 medium-4 columns'><h3><a>$row->username</a></h3><br>
-							<h3>$row->fullname</h3><h3>$row->room, $row->hostel</h3><h3>+91 $row->contact</h3><h3>$row->email</h3></div>";
+					echo "<div class='small-5 medium-5 large-2 columns'><a class='th '><img src='".$image_file."'></a></div>";        
+					echo "<div class='small-7 medium-7 large-5 columns'><h4><a>$row->username</a></h4>
+							<h4>$row->fullname</h4><h5>$row->room, $row->hostel</h5><h5>+91 $row->contact</h5><h5>$row->email</h5></div>";
 					echo "";
 					foreach ($docs as $value) {
-						echo "<ul class='button-group small-12 medium-5 columns'><li class=' small-7 columns'><a class='button expand' data-reveal-id='myModal-$value' data-reveal>View " . $value. "</a></li>
-						<li class='small-5 columns'><a class='button success expand' target='_blank' href='".IMG_ROOT."/social/".$row->{$value}."'>Download</a></li></ul>";
+						echo "<div class='small-12 medium-12 large-5 columns'><div class='row collapse'><div class='small-7 columns'><a class='button expand' data-reveal-id='myModal-$row->username$value' data-reveal>View " . $value. "</a></div>
+						<div class='small-5 columns'><a class='button success expand' target='_blank' href='".IMG_ROOT."/social/".$row->{$value}."'>Download</a></div></div></div>";
 						?>
-						<div id="myModal-<?= $value?>" class="reveal-modal" data-reveal>
+						<div id="myModal-<?= $row->username.$value?>" class="reveal-modal" data-reveal>
 							<object data="<?= IMG_ROOT ?>/social/<?= $row->{$value} ?>" type="application/pdf" class="pdf-object">	<!-- Just change the path in data=" " and a href=" " for different Candidates -->
 								alt : <a href="<?= IMG_ROOT ?>/social/<?= $row->{$value} ?>">$value</a>
 							</object>

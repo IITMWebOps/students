@@ -61,10 +61,18 @@ else{
     echo " </small> 
         </h4><br>";
     while($row = mysql_fetch_object($result) ){
-       echo "<blockquote>
+		
+		echo " <div class='small-12 columns '>
+					<div class='small-2 columns'>
+						<a style='float:right' class='th'><img style='max-height:70px;' src='" . IMG_ROOT . "/default/user-default-blue.png'></a>					
+					</div>";    	
+    	
+       echo "<div class='small-10 columns'><blockquote>
             <h4>". strtoupper($row->username)."  |  $row->fullname</h4>
             <p># $row->room  $row->hostel</p>
-        </blockquote>";
+        </blockquote></div>";
+        
+      echo "</div>";
     }
 	//	Displaying the Next Page Tab again at the end of results;	
 	echo "
