@@ -3719,14 +3719,16 @@ blockquote p {
 /* Progress Bar */
 .progress {
   background-color: #f6f6f6;
-  height: 1.5625rem;
+  height: 2.3rem;
   border: 1px solid #cccccc;
-  padding: 0.125rem;
-  margin-bottom: 0.625rem; }
+  padding: 0rem;
+  margin-bottom: 10.625rem; }
   .progress .meter {
     background: #008cba;
     height: 100%;
-    display: block; }
+    display: block;
+	 position: relative;    
+     }
   .progress.secondary .meter {
     background: #e7e7e7;
     height: 100%;
