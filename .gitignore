@@ -10,3 +10,5 @@ coreapp/config.db.php
 .htaccess
 assets/config.application.js
 assets/applicationjs/config.application.js
+assets/files
+assets/css/foundation.css~

@@ -1,3 +1,9 @@
+<?php
+  if ( !$current_user->login() ) redirect_to('/user/login',true);
+  page_title('Edit Profile');
+?>
+
+
 <script>
   function Profile_SubmitCtrl($scope){
 	  $scope.profile = { 'username' : '<?= $current_user->username?>',
