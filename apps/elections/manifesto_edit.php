@@ -3,7 +3,7 @@ if (!$current_user->login()) redirect_to('/user/login',true);
 $query = "SELECT * FROM `stu_portal`.`nominations` WHERE user_id=$current_user->id";
 $result = mysql_query($query) or trigger_error(mysql_error());
 $num_rows = mysql_num_rows($result);
-//if (!$num_rows)	redirect_to('/elections/manifesto_form',true);
+if (!$num_rows)	redirect_to('/elections/manifesto_form',true);
 
 $result = mysql_query("SELECT pi.id, pi.post_id, p.post_name, p.top_level_post_name, no.user_id,u.username,u.hostel, no.image, no.manifesto, no.writeup
         FROM `stu_portal`.`nominations` AS no
@@ -19,9 +19,7 @@ $result = mysql_query("SELECT pi.id, pi.post_id, p.post_name, p.top_level_post_n
 $row = mysql_fetch_object($result);
 
 
-if ($row->top_level_post_name == 'Secretary' or $row->top_level_post_name == 'Councillor' or $row->top_level_post_name == 'Branch Councillor')
-	$row->category = 'General Body Elections';
-elseif ($row->top_level_post_name == 'Hostel Secretary') $row->category = 'Hostel Body Elections';
+
 
 //print_r($row);
 		

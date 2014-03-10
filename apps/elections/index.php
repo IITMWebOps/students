@@ -40,7 +40,7 @@ if (isset($_GET['q'])) {
     );
     $docs = array('manifesto', 'writeup');
     if (!mysql_num_rows($result))
-        echo "<br><br>Search Results Not found";
+        echo "<br><i class='fa fa-search'></i> | No Results Found <i class='fa fa-frown-o'></i>";
     else {
         while ($row = mysql_fetch_object($result)) {
 
