@@ -1,18 +1,22 @@
 <script>
     function hostel_SubmitCtrl($scope) {
-        $scope.eview = {'hostel': '<?= $current_user->hostel ?>'};
+        $scope.eview = {'hostel': '<?= ucfirst(strtolower($current_user->hostel)) ?>'};
 
 
 <?php
 $all_hostels = '[';
+$uc_all_hostels = '[';
 $h_res = mysql_query("SELECT DISTINCT `users`.`hostel` FROM `stu_portal`.`users` ORDER BY `users`.`hostel` ASC");
 while ($row = mysql_fetch_object($h_res)) {
     $all_hostels.= "{ 'name' : '" . $row->hostel . "' },";
+    $uc_all_hostels.= "{ 'name' : '" . ucfirst(strtolower($row->hostel)) . "' },";
 }
 $all_hostels = substr($all_hostels, 0, -1) . ' ]';
+$uc_all_hostels = substr($uc_all_hostels, 0, -1) . ' ]';
 ?>
 
         $scope.AllHostels = <?= $all_hostels ?>;
+        $scope.UCAllHostels = <?= $uc_all_hostels ?>;
 
     }
 </script>
@@ -39,7 +43,7 @@ $all_hostels = substr($all_hostels, 0, -1) . ' ]';
             echo "<li class='current'><a href='#'>" . $elec_body[$_GET['category']] . "</a></li>";
             echo "</ul></div>";
             if ($_GET['category'] == 'HBE') {
-                echo "<select class='small-12 medium-8 large-6 medium-offset-2 large-offset-3 columns' ng-model='eview.hostel' ng-options = 'h.name as h.name for h in AllHostels'></select>";
+                echo "<select class='small-12 medium-8 large-6 medium-offset-2 large-offset-3 columns' ng-model='eview.hostel' ng-options = 'h.name as h.name for h in UCAllHostels'></select>";
             }
             $query = "SELECT post_id FROM `stu_portal`.`post_instances` WHERE open=1";
             $result = mysql_query($query) or trigger_error(mysql_error());
@@ -61,7 +65,7 @@ $all_hostels = substr($all_hostels, 0, -1) . ' ]';
                     $row2 = mysql_fetch_object($result2);
                     if ($row2) {
                         $post = str_replace(" ", "_", $row2->post_name . "_" . str_replace('Hostel ', '', $row2->top_level_post_name));
-                        echo "<tr><td><a  href='#/elections/view?category=" . $_GET['category'] . "&post={{ eview.hostel | lowercase}}_" . $post . "'>" . $row2->post_name . " " . str_replace('Hostel ', '', $row2->top_level_post_name) . "</a></td></tr>";
+                        echo "<tr><td><a  href='#/elections/view?category=" . $_GET['category'] . "&post={{ eview.hostel | capitalize}}_" . $post . "'>" . $row2->post_name . " " . str_replace('Hostel ', '', $row2->top_level_post_name) . "</a></td></tr>";
                     }
                 }
             }
