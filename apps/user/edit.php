@@ -96,7 +96,7 @@ $all_hostels = substr($all_hostels, 0, -1).' ]';
 	</div>
 	<div class="small-12 medium-4 columns">
 			<a class="th radius" >
-  				<img id="profile-pic" src="<?=IMG_ROOT?>/alert_images/yash.jpg">
+  				<img id="profile-pic" src="<?=IMG_ROOT?>/default/user-default-blue.png">
 			</a>
 	</div>
 	</div> 

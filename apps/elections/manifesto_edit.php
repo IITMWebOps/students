@@ -18,8 +18,9 @@ $result = mysql_query("SELECT pi.id, pi.post_id, p.post_name, p.top_level_post_n
 
 $row = mysql_fetch_object($result);
 
-
-
+$temp_img_data = array('link' => $row->image, 'name' => 'Image');
+$temp_mani_data = array('link' => $row->manifesto, 'name' => 'Manifesto');
+$temp_write_data = array('link' => $row->writeup, 'name' => 'Write Up');
 
 //print_r($row);
 		
@@ -88,7 +89,7 @@ $row = mysql_fetch_object($result);
       		<span class="prefix" style="height:3.2rem;">Image</span>
     		</div>
    		<div class="small-9 large-10 columns " >       
-            <?php upload_file(array('image/jpeg','image/jpg', 'image/png'), 5242880, 'electionImgId'); ?>
+            <?php upload_file(array('image/jpeg','image/jpg', 'image/png'), 5242880, 'electionImgId',$temp_img_data); ?>
          </div>
   		</div>
   		<div class="row collapse">
@@ -96,7 +97,7 @@ $row = mysql_fetch_object($result);
           <span class="prefix"  style="height:3.2rem;"    >Manifesto</span>
     		</div>
    		<div class="small-9 large-10 columns " >       
-            <?php upload_file(array('application/pdf'), 5242880, 'electionManiId'); ?>
+            <?php upload_file(array('application/pdf'), 5242880, 'electionManiId',$temp_mani_data); ?>
          </div>
   		</div>
 		<div class="row collapse">
@@ -104,7 +105,7 @@ $row = mysql_fetch_object($result);
       		<span class="prefix" style="height:3.2rem;"  >Write Up</span>
     		</div>
    		<div class="small-9 large-10 columns " >       
-            <?php upload_file(array('application/pdf'), 5242880, 'electionWriteId'); ?>
+            <?php upload_file(array('application/pdf'), 5242880, 'electionWriteId',$temp_write_data); ?>
          </div>
   		</div>	
 </div>

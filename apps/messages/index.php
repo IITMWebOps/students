@@ -35,7 +35,7 @@ $limit_f = isset($_GET['f']) ? $_GET['f'] : '0';
 $limit_query = "LIMIT ".$limit_f." , ".$range;
 $search = isset($_GET['q']) ? "AND (`link` LIKE '%".$_GET['q']."%' OR `name` LIKE '%".$_GET['q']."%')" : "";
 
-$query="SELECT * FROM `stu_portal`.`pages` WHERE `trash` = '0' ".$search."  ORDER BY `updated_at` ".$limit_query;
+$query="SELECT * FROM `stu_portal`.`pages` WHERE `trash` = '0' ".$search."  ORDER BY `updated_at` DESC ".$limit_query;
 $result = mysql_query($query) or trigger_error(mysql_error() );
 
 

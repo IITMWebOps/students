@@ -1,7 +1,7 @@
 <br><br><br><br>
 <div class="fixed-bot">
 		<div class="hide-for-small hide-for-medium" id="Footer-Body">                               	
-          <p>Copyrights - Institute WebOps</p>
+          <p>webops@smail.iitm.ac.in</p>
 				<div id="social-icons">
 									<ul>
 										<li class="social-icon twitter">
@@ -48,7 +48,7 @@
 
 <div class="">
 		<div class="show-for-medium-down" id="Footer-Body">                               	
-          <p>Copyrights - Institute WebOps</p>
+          <p>webops@smail.iitm.ac.in</p>
           
 				
 				<div id="social-icons">

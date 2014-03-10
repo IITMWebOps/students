@@ -1,7 +1,7 @@
 <?php
 
  if (!function_exists('upload_file')) {
-        function upload_file($type = NULL, $size = NULL, $name = NULL) {
+        function upload_file($type = NULL, $size = NULL, $name = NULL, $previousf = NULL) {
 
 
           if ($type !== NULL) {
@@ -10,6 +10,7 @@
 
 
             $random_string = substr( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", mt_rand(0, 40) , 1) .substr( md5( time() ), mt_rand(0,12), 5) ;
+
 
 ?>
 
@@ -120,7 +121,7 @@ function progressHandlingFunction<?=$random_string?>(e){
       return 100*e.loaded/e.total+'%';
     });
   }
-}
+          }
 
 </script>
 

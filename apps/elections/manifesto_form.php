@@ -42,7 +42,6 @@ if ($num_rows)	redirect_to('/elections/manifesto_edit',true);?>
 <form ">
 <br><br> 
 <div>
-<? echo $current_user->id."dfdsf"; ?>
 <div class="small-12 large-8 large-centered columns">
 		<div class="row collapse">
     		<div class="small-3 large-2 columns">
