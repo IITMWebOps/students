@@ -10,7 +10,7 @@ $result = mysql_query("SELECT pi.id, pi.post_id, no.user_id,p.post_name, p.top_l
 					  ON (no.post_instance_id = pi.id)
 					JOIN `stu_portal`.`posts` AS p 
 					  ON (p.id = pi.post_id) 
-					WHERE (pi.open = 1) and (u.fullname like '%$data->search%'  or u.username like '%$data->search%' or p.post_name like '%$data->search%' or p.top_level_post_name like '%$data->search%')
+					WHERE (pi.open = 1) and (u.fullname like '%$data->search%'  or u.username like '%$data->search%' or u.hostel like '%$data->search%' or p.post_name like '%$data->search%' or p.top_level_post_name like '%$data->search%')
 					ORDER BY pi.id ASC") or trigger_error(mysql_error());
 ?>
 
