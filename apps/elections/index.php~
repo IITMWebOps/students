@@ -40,7 +40,7 @@ if (isset($_GET['q'])) {
     );
     $docs = array('manifesto', 'writeup');
     if (!mysql_num_rows($result))
-        echo "<br><br>Search Results Not found";
+        echo "<br><br><i class='fa fa-search'></i> | No Results Found <i class='fa fa-frown-o'></i>";
     else {
         while ($row = mysql_fetch_object($result)) {
 
@@ -63,7 +63,7 @@ if (isset($_GET['q'])) {
             echo "<div class='row'> ";
             echo "<div class='small-12 medium-3 columns'><a class='button expand' href='#/elections/view?category=" . $category . "&post=" . $post . "'><i class='fa fa-folder-open'></i> | " . $username . "</a></div>";
             echo "<div class='small-12 medium-9 columns'><h4>" . $fullname . " | " . $post_f . "</h4>";
-				echo "<h4>" . $elec_body[$category] . "</h4>";
+				
             echo "";
             echo "</div><hr></div>";
         }

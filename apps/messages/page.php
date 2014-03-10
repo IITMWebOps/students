@@ -29,7 +29,7 @@
   page_title($row->name);
 
   echo"<br><br>$row->content <br><br>
-    <strong>Created by</strong> : ".GetPostName($row->post_id)."<p class='text right'><strong>Updated at</strong> : ".$row->updated_at." </p> <br><br> 
+    <strong><i class='fa fa-user'></i></strong> | ".GetPostName($row->post_id)."<p class='text right'><strong><i class='fa fa-clock-o'></i> | </strong> : ".$row->updated_at." </p> <br><br> 
     ";
 
 

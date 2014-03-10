@@ -3,7 +3,7 @@ if (!$current_user->login()) redirect_to('/user/login',true);
 $query = "SELECT * FROM `stu_portal`.`nominations` WHERE user_id=$current_user->id";
 $result = mysql_query($query) or trigger_error(mysql_error());
 $num_rows = mysql_num_rows($result);
-//if ($num_rows)	redirect_to('/elections/manifesto_edit',true);?>
+if ($num_rows)	redirect_to('/elections/manifesto_edit',true);?>
 
 <script>
   function eapply_SubmitCtrl($scope){

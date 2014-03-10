@@ -33,7 +33,7 @@ $data->search = $_GET['search'];
 $limit_f = isset( $_GET['f']) ? $_GET['f'] : 0;
 
 
-$query = "SELECT DISTINCT username,fullname,room,hostel FROM `stu_portal`.`users` where username like '%$data->search%' or fullname like '%$data->search%' or email like '%$data->search%' or contact like '%$data->search%' LIMIT ".$limit_f.", 10";
+$query = "SELECT DISTINCT username,fullname,room,hostel,email,profile_picture FROM `stu_portal`.`users` where username like '%$data->search%' or fullname like '%$data->search%' or email like '%$data->search%' or contact like '%$data->search%' LIMIT ".$limit_f.", 10";
 $result = mysql_query($query) or http_response_code(500);
 
 
@@ -41,7 +41,7 @@ $count = mysql_query("SELECT COUNT(id) FROM stu_portal.users where username like
 $count_result = mysql_fetch_array($count);
 
 if( !mysql_num_rows($result) ) 
-  echo "<br><br>Search Results Not found";
+  echo "<br><br><i class='fa fa-search'></i> No Results found";
 else{
     $limit_t = ($count_result[0]-$limit_f > 9) ? $limit_f+10 : $count_result[0];
     $show_next = ($count_result[0]-$limit_t ) ? 1 : 0; 
@@ -61,15 +61,22 @@ else{
     echo " </small> 
         </h4><br>";
     while($row = mysql_fetch_object($result) ){
+		$name_parts=explode(" ", $row->fullname);
+			for($i=0;$i<sizeof($name_parts);$i++)
+				$name_parts[$i]= ucfirst(strtolower($name_parts[$i]));
+			$fullname = implode(" ", $name_parts);
+		if(empty($row->profile_picture) or !file_exists(FILE_DIR_ROOT.'/'.$row->profile_picture)) $image_file= IMG_ROOT."/default/user-default-blue.png";
+		else $image_file = FILE_ROOT.'/'.$row->profile_picture;
 		
 		echo " <div class='small-12 columns '>
 					<div class='small-2 columns'>
-						<a style='' class='th'><img style='max-height:70px;' src='" . IMG_ROOT . "/default/user-default-blue.png'></a>					
+						<a style='float:right' class='th'><img style='max-height:100px;' src='" . $image_file . "'></a>					
 					</div>";    	
     	
        echo "<div class='small-10 columns'><blockquote>
-            <h4>". strtoupper($row->username)."  |  $row->fullname</h4>
-            <p># $row->room  $row->hostel</p>
+            <h4>". strtoupper($row->username)."  |  $fullname</h4>
+            <p><i class='fa fa-map-marker' style='margin-left:4px; margin-right:3px;'></i> | $row->room,  $row->hostel 
+            <br><i class='fa fa-envelope'></i> | $row->email </p>
         </blockquote></div>";
         
       echo "</div>";

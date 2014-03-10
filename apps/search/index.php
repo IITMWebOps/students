@@ -55,7 +55,7 @@ $count_students_result = mysql_fetch_array($count_students);
 
 $count_result = $count_students_result[0]+$count_applications_result[0]+$count_pages_result[0];
 if( !mysql_num_rows($result_students) and !mysql_num_rows($result_applications) and !mysql_num_rows($result_pages)) 
-  echo "<br><br>Search Results Not found";
+  echo "<br><br><i class='fa fa-search'></i> | No Results Found <i class='fa fa-frown-o'></i>";
 else{
     $limit_t = ($count_result-$limit_f > 9) ? $limit_f+10 : $count_result;
     $show_next = ($count_result-$limit_t ) ? 1 : 0; 
@@ -77,19 +77,19 @@ else{
     while($row = mysql_fetch_object($result_pages) ){
        echo "<blockquote>
             <h4><a href='#/messages/$row->link'><i class='fa fa-envelope'></i> | ". $row->name."</a></h4>
-            <span># Created by : ".GetPostName($row->post_id)."<p class='text right'> Updated at :  $row->updated_at</p></span>
+            <span><i class='fa fa-user'></i> | ".GetPostName($row->post_id)."<p class='text right'><i class='fa fa-clock-o'></i> | $row->updated_at</p></span>
         </blockquote>";
     }
 	while($row = mysql_fetch_object($result_applications) ){
        echo "<blockquote>
-            <h4><a href='$row->link' target='_blank'><i class='fa fa-link'></i> | ". $row->name."</a></h4>
-            <p># $row->link</p>
+            <h4><a href='$row->link' target='_blank'><i class='fa fa-external-link'></i> | ". $row->name."</a></h4>
+            <p><i class='fa fa-link'></i> | $row->link</p>
         </blockquote>";
     }
 	while($row = mysql_fetch_object($result_students) ){
        echo "<blockquote>
             <h4><i class='fa fa-user'></i> | ". strtoupper($row->username)."  |  $row->fullname</h4>
-            <p># $row->room  $row->hostel</p>
+            <p><i class='fa fa-map-marker'></i> | $row->room  $row->hostel</p>
         </blockquote>";
     }
 	//	Displaying the Next Page Tab again at the end of results;	
