@@ -3720,10 +3720,10 @@ blockquote p {
 /* Progress Bar */
 .progress {
   background-color: #f6f6f6;
-  height: 2.3rem;
+  height: 3.2rem;
   border: 1px solid #cccccc;
   padding: 0rem;
-  margin-bottom: 10.625rem; }
+  }
   .progress .meter {
     background: #008cba;
     height: 100%;
@@ -4315,7 +4315,7 @@ table {
 
 /* Standard Forms */
 form {
-  margin: 0 0 1rem; }
+  margin: 0 0 0rem; }
 
 /* Using forms within rows, we need to set some defaults */
 form .row .row {

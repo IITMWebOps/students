@@ -21,6 +21,7 @@ define('FILE_DIR_ROOT', ASSETS_DIR_ROOT . DS . "files", false );
   require_once (ROOT . DS . 'coreapp' . DS . 'function.page_title.php');
   require_once (ROOT . DS . 'coreapp' . DS . 'function.mysql_fetch_all.php');
   require_once (ROOT . DS . 'coreapp' . DS . 'function.render_alert.php');
+  require_once (ROOT . DS . 'coreapp' . DS . 'function.upload_file.php');
 
 class Application{
 

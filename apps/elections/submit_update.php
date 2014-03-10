@@ -3,8 +3,11 @@ if( !$current_user->login() ) redirect_to('/user/login', true);
 $data = json_decode(file_get_contents("php://input"));
 
 
-$query = "INSERT INTO `stu_portal`.`nominations` (`user_id`, `post_instance_id`, `image`, `manifesto`, `writeup`)
-		  VALUES ('".$current_user->id."','". $data->post_instance_id."','".$data->image."', '".$data->manifesto."', '".$data->writeup."')";
+
+$query = "UPDATE `stu_portal`.`nominations` 
+          SET `post_instance_id` = '".$data->post_instance_id."', `image` = '".$data->image."' , `manifesto` = '".$data->manifesto."' , `writeup` = '".$data->writeup."' 
+          WHERE `user_id` = '".$current_user->id."'";
+
 $result = mysql_query($query) or die(mysql_error());
 
 

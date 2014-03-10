@@ -110,11 +110,11 @@ $all_hostels = substr($all_hostels, 0, -1) . ' ]';
 					echo "";
 					foreach ($docs as $value) {
 						echo "<div class='small-12 medium-12 large-5 columns'><div class='row collapse'><div class='small-7 columns'><a class='button expand' data-reveal-id='myModal-$row->username$value' data-reveal>View " . $value. "</a></div>
-						<div class='small-5 columns'><a class='button success expand' target='_blank' href='".IMG_ROOT."/social/".$row->{$value}."'>Download</a></div></div></div>";
+						<div class='small-5 columns'><a class='button success expand' target='_blank' href='".FILE_ROOT."/".$row->{$value}."'>Download</a></div></div></div>";
 						?>
 						<div id="myModal-<?= $row->username.$value?>" class="reveal-modal" data-reveal>
-							<object data="<?= IMG_ROOT ?>/social/<?= $row->{$value} ?>" type="application/pdf" class="pdf-object">	<!-- Just change the path in data=" " and a href=" " for different Candidates -->
-								alt : <a href="<?= IMG_ROOT ?>/social/<?= $row->{$value} ?>">$value</a>
+							<object data="<?= FILE_ROOT ?>/<?= $row->{$value} ?>" type="application/pdf" class="pdf-object">	<!-- Just change the path in data=" " and a href=" " for different Candidates -->
+								alt : <a href="<?= FILE_ROOT ?>/<?= $row->{$value} ?>">$value</a>
 							</object>
 						</div>	
 						<!-- @Prasanth, The modal is not working unless i invoke the foundation script again -->
