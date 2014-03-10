@@ -105,7 +105,7 @@ $uc_all_hostels = substr($uc_all_hostels, 0, -1) . ' ]';
 			for($i=0;$i<sizeof($name_parts);$i++)
 				$name_parts[$i]= ucfirst(strtolower($name_parts[$i]));
 			$row->fullname = implode(" ", $name_parts);
-						if(!file_exists(FILE_DIR_ROOT.'/'.$row->image)) $image_file= IMG_ROOT."/default/user-default-blue.png";
+						if(!$row->image or !file_exists(FILE_DIR_ROOT.'/'.$row->image)) $image_file= IMG_ROOT."/default/user-default-blue.png";
 						else $image_file = FILE_ROOT.'/'.$row->image;
 				
 				echo "<div class='small-12 columns'>";
