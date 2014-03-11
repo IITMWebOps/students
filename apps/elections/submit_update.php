@@ -4,8 +4,11 @@ $data = json_decode(file_get_contents("php://input"));
 
 
 
-$query = "UPDATE `stu_portal`.`nominations` 
+/*$query = "UPDATE `stu_portal`.`nominations` 
           SET `post_instance_id` = '".$data->post_instance_id."', `image` = '".$data->image."' , `manifesto` = '".$data->manifesto."' , `writeup` = '".$data->writeup."' 
+          WHERE `user_id` = '".$current_user->id."'";*/
+$query = "UPDATE `stu_portal`.`nominations` 
+          SET `image` = '".$data->image."'  
           WHERE `user_id` = '".$current_user->id."'";
 
 $result = mysql_query($query) or die(mysql_error());

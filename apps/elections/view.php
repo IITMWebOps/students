@@ -4,7 +4,6 @@
 
 
 <?php
-if (!$current_user->login()) redirect_to('/user/login',true);
 $all_hostels = '[';
 $uc_all_hostels = '[';
 $h_res = mysql_query("SELECT DISTINCT `users`.`hostel` FROM `stu_portal`.`users` ORDER BY `users`.`hostel` ASC");
@@ -113,7 +112,7 @@ $uc_all_hostels = substr($uc_all_hostels, 0, -1) . ' ]';
 					echo "<div class='small-7 medium-7 large-5 columns'><h4><a>$row->username</a></h4>
 							<h4>$row->fullname</h4><h5>$row->room, $row->hostel</h5><h5>+91 $row->contact</h5><h5>$row->email</h5></div>";
 					echo "";
-					if (strtolower($row->username) == strtolower($current_user->username)){
+					
 					foreach ($docs as $value) {
 						echo "<div class='small-12 medium-12 large-5 columns'><div class='row collapse'><div class='small-7 columns'><a class='button expand' data-reveal-id='myModal-$row->username$value' data-reveal>View " . $value. "</a></div>
 						<div class='small-5 columns'><a class='button success expand' target='_blank' href='".FILE_ROOT."/".$row->{$value}."'>Download</a></div></div></div>";
@@ -129,7 +128,7 @@ $uc_all_hostels = substr($uc_all_hostels, 0, -1) . ' ]';
 						</script>
 						
 					<?php
-				}}
+				}
 				echo "<hr></div>";
 				}
 			

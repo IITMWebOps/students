@@ -84,6 +84,7 @@ if (isset($_GET['q'])) {
     <br><br>
     <div class="small-12 medium-8 medium-centered columns">
         <a class="button expand large" href="<?= APP_URL ?>/#/elections/manifesto_form">Click here to Upload Manifesto</a>
+        
     </div>
 </div>
 

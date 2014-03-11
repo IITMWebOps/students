@@ -3,7 +3,8 @@ if (!$current_user->login()) redirect_to('/user/login',true);
 $query = "SELECT * FROM `stu_portal`.`nominations` WHERE user_id=$current_user->id";
 $result = mysql_query($query) or trigger_error(mysql_error());
 $num_rows = mysql_num_rows($result);
-if (!$num_rows)	redirect_to('/elections/manifesto_form',true);
+//if (!$num_rows)	redirect_to('/elections/manifesto_form',true);
+if (!$num_rows)	redirect_to('/elections',true);
 
 $result = mysql_query("SELECT pi.id, pi.post_id, p.post_name, p.top_level_post_name, no.user_id,u.username,u.hostel, no.image, no.manifesto, no.writeup
         FROM `stu_portal`.`nominations` AS no
@@ -65,7 +66,7 @@ $temp_write_data = array('link' => $row->writeup, 'name' => 'Write Up');
 <br><br> 
 <div>
 <div class="small-12 large-8 large-centered columns">
-		<div class="row collapse">
+		<!--<div class="row collapse">
     		<div class="small-3 large-2 columns">
       		<span class="prefix">Category</span>
     		</div>
@@ -82,7 +83,7 @@ $temp_write_data = array('link' => $row->writeup, 'name' => 'Write Up');
             <select ng-model="apply.post_instance_id"  ng-switch-when="gbe" ><?=$gbe_p?></select>
             <select ng-model="apply.post_instance_id"  ng-switch-when="hbe" ><?=$hbe_p?></select>
          </div>
-  		</div>	
+  		</div>	-->
 		 	
   		<div class="row collapse">
     		<div class="small-3 large-2 columns">
@@ -92,7 +93,7 @@ $temp_write_data = array('link' => $row->writeup, 'name' => 'Write Up');
             <?php upload_file(array('image/jpeg','image/jpg', 'image/png'), 5242880, 'electionImgId',$temp_img_data); ?>
          </div>
   		</div>
-  		<div class="row collapse">
+  		<!--<div class="row collapse">
     		<div class="small-3 large-2 columns">
           <span class="prefix"  style="height:3.2rem;"    >Manifesto</span>
     		</div>
@@ -107,7 +108,7 @@ $temp_write_data = array('link' => $row->writeup, 'name' => 'Write Up');
    		<div class="small-9 large-10 columns " >       
             <?php upload_file(array('application/pdf'), 5242880, 'electionWriteId',$temp_write_data); ?>
          </div>
-  		</div>	
+  		</div>	-->
 </div>
 <hr>
 <div class="small-12 columns">

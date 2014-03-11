@@ -1,3 +1,4 @@
+<?php redirect_to('/elections/manifesto_edit',true);?>
 <?php
 if (!$current_user->login()) redirect_to('/user/login',true);
 $query = "SELECT * FROM `stu_portal`.`nominations` WHERE user_id=$current_user->id";
