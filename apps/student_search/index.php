@@ -74,7 +74,7 @@ else{
 					</div>";    	
     	
        echo "<div class='small-10 columns'><blockquote>
-            <h4>". strtoupper($row->username)."  |  $fullname</h4>
+         <h4><a href='".APP_HOST."/".$row->username."' target='_blank'>". strtoupper($row->username)."  |  $fullname</a></h4>
             <p><i class='fa fa-map-marker' style='margin-left:4px; margin-right:3px;'></i> | $row->room,  $row->hostel 
             <br><i class='fa fa-envelope'></i> | $row->email </p>
         </blockquote></div>";

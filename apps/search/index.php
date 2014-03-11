@@ -88,7 +88,7 @@ else{
     }
 	while($row = mysql_fetch_object($result_students) ){
        echo "<blockquote>
-            <h4><i class='fa fa-user'></i> | ". strtoupper($row->username)."  |  $row->fullname</h4>
+            <h4><a href='".APP_HOST."/".$row->username."' target='_blank' >  <i class='fa fa-user'></i> | ". strtoupper($row->username)."  |  $row->fullname </a> </h4>
             <p><i class='fa fa-map-marker'></i> | $row->room  $row->hostel</p>
         </blockquote>";
     }
